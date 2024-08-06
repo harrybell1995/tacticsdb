@@ -1,0 +1,117 @@
+/* Container Styles */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Form Container Styles */
+.form-container {
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+/* Field Container Styles */
+.field-container {
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Field Styles */
+.field {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 0;
+  padding-bottom: 60%; /* Aspect ratio (3:2) for a football pitch */
+  background: #2d6a4f; /* Green background */
+  border-radius: 10px;
+  margin: 0 auto;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  /* Margin of 10% on the edges of the field */
+  box-sizing: border-box;
+}
+
+/* Position Styles */
+.position {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #ffdd57; /* Soft yellow */
+  color: #000;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+  pointer-events: none; /* Make non-interactive */
+}
+
+/* Position when visible */
+.position.visible {
+  opacity: 1;
+  pointer-events: auto; /* Make interactive */
+}
+
+/* Hover styles */
+.position:hover::after {
+  content: attr(data-role) " | " attr(data-focus);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 0.8em;
+}
+
+
+/* Position Coordinates */
+
+/* Goalkeeper */
+#pos_gk { bottom: 15%; left: 50%;  }
+
+/* Defensive Line */
+#pos_rb { bottom: 30%; left: 80%; } /* Right Back */
+#pos_rcb { bottom: 30%; left: 60%; } /* Right Center Back */
+#pos_cb { bottom: 30%; left: 50%;} /* Center Back */
+#pos_lcb { bottom: 30%; left: 40%; } /* Left Center Back */
+#pos_lb { bottom: 30%; left: 20%; } /* Left Back */
+
+/* Midfield Line */
+#pos_rm { bottom: 50%; left: 80%; } /* Right Midfielder */
+#pos_rcm { bottom: 50%; left: 60%; } /* Right Center Midfielder */
+#pos_cm { bottom: 50%; left: 50%; } /* Central Midfielder */
+#pos_lcm { bottom: 50%; left: 40%; } /* Left Center Midfielder */
+#pos_lm { bottom: 50%; left: 20%; } /* Left Midfielder */
+#pos_ram { bottom: 60%; left: 70%; } /* Right Attacking Midfielder */
+#pos_cam { bottom: 60%; left: 50%;  } /* Central Attacking Midfielder */
+#pos_lam { bottom: 60%; left: 30%; } /* Left Attacking Midfielder */
+#pos_rdm { bottom: 40%; left: 70%; } /* Right Defensive Midfielder */
+#pos_cdm { bottom: 40%; left: 50%; } /* Central Defensive Midfielder */
+#pos_ldm { bottom: 40%; left: 30%; } /* Left Defensive Midfielder */
+
+/* Attacking Line */
+#pos_rw { bottom: 70%; left: 80%; } /* Right Winger */
+#pos_rf { bottom: 70%; left: 60%; } /* Right Forward */
+#pos_cf { bottom: 70%; left: 50%; } /* Center Forward */
+#pos_lf { bottom: 70%; left: 40%; } /* Left Forward */
+#pos_lw { bottom: 70%; left: 20%; } /* Left Winger */
+
+/* Strikers */
+#pos_rst { bottom: 75%; left: 60%; } /* Right Striker */
+#pos_st { bottom: 75%; left: 50%;  } /* Central Striker */
+#pos_lst { bottom: 75%; left: 40%; } /* Left Striker */
